@@ -7,7 +7,7 @@ locals {
 }
 
 resource "aws_security_group" "main" {
-  name   = "${local.common_tags.environment}-sg-${var.name}"
+  name   = var.name
   vpc_id = var.vpc_id
 
   dynamic "ingress" {
